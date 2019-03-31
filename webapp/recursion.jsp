@@ -47,7 +47,7 @@
         //TODO
         else
         {
-            retrun ((value) * factorial(value-1));
+            return ((value) * factorial(value-1));
         }
     }
     /** **********************************************************************
@@ -73,7 +73,7 @@
         {
             return n;
         }
-        retrun fibonacci(n-1) + fibonacci(n-2);
+        return fibonacci(n-1) + fibonacci(n-2);
     }
     
     /** **********************************************************************
@@ -124,7 +124,7 @@
         public void add(Tree child)
         {
     	    //TODO
-            children.add(child)
+            children.add(child);
         }
     }
     
@@ -164,7 +164,7 @@
         
     	//TODO
         --height;
-        return Math.pow(branchingFactor, height) + nnaryTreeSize(branchingFactor, height - 1)
+        return (int)Math.pow(branchingFactor, height) + nnaryTreeSize(branchingFactor, height - 1);
     }
     /** **********************************************************************
      * This function uses the Tree data structure defined above. This simply sums up the all
@@ -178,16 +178,17 @@
     {
     	//TODO
         int value = 0;
-        if(tree.getChildren() == 1)
+        if(tree.getChildren().size() == 0)
         {
-            value = tree.getValue();
+            value += tree.getValue();
         }
         else
         {
-            for(int index = 0; index < tree.size(); ++index)
+            for(int index = 0; index < tree.getChildren().size(); ++index)
             {
-                 value = value + tree.getChildren().get(index);   
+                 value = value + treeSum(tree.getChildren().get(index));   
             }
+         value += tree.getValue();
         }
         return value;
     }
