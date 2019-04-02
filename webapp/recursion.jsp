@@ -106,6 +106,7 @@
         public Tree(int value)
         {
     	    //TODO
+            this.value = value;
             children = new ArrayList(value);
         }
     
@@ -164,7 +165,7 @@
         
     	//TODO
         --height;
-        return (int)Math.pow(branchingFactor, height) + nnaryTreeSize(branchingFactor, height - 1);
+        return (int)Math.pow(branchingFactor, height) + nnaryTreeSize(branchingFactor, height);
     }
     /** **********************************************************************
      * This function uses the Tree data structure defined above. This simply sums up the all
